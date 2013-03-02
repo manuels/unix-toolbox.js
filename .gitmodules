@@ -1,0 +1,12 @@
+[submodule "file"]
+	path = modules/file
+	url = git@github.com:manuels/unix-toolbox.js-file.git
+[submodule "imagemagick"]
+	path = modules/imagemagick
+	url = git@github.com:manuels/unix-toolbox.js-poppler.git
+[submodule "poppler"]
+	path = modules/poppler
+	url = git@github.com:manuels/unix-toolbox.js-poppler.git
+[submodule "xz"]
+	path = modules/xz
+	url = git@github.com:manuels/unix-toolbox.js-xz.git
