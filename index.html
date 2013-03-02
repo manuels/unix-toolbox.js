@@ -99,7 +99,46 @@ image name, and more.</li>
 <code>xzdec</code> Small .xz decompressor</li>
 </ul>
 </li>
-</ul>
+</ul><h3>Example</h3>
+
+<p>The Javascript class <code>Interface</code> can be used to initiate a WebWorker and communicate with it..
+This is an example from ImageMagick's <code>convert</code> tool that loads some XML files required by ImageMagick and then loads the image <code>test.png</code>, rotates it and converts it to JPEG format:</p>
+
+<pre><code>&lt;script src="toolbox-base/interface.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var convert = new Interface('convert-worker.js');
+
+  // print convert output to console
+  convert.on_stdout = function(txt) { console.log(txt); };
+  convert.on_stderr = function(txt) { console.log(txt); };
+
+  // load ImageMagick's configuration files
+  convert.mkdir('/', 'usr/local/etc/ImageMagick').then(function() {
+    convert.addUrl('./src/config/magic.xml',   '/usr/local/etc/ImageMagick', 'magic.xml');
+    convert.addUrl('./src/config/coder.xml',   '/usr/local/etc/ImageMagick', 'coder.xml');
+    convert.addUrl('./src/config/policy.xml',  '/usr/local/etc/ImageMagick', 'policy.xml');
+    convert.addUrl('./src/config/english.xml', '/usr/local/etc/ImageMagick', 'english.xml');
+    convert.addUrl('./src/config/locale.xml',  '/usr/local/etc/ImageMagick', 'locale.xml');
+    convert.addUrl('./src/config/delegates.xml',  '/usr/local/etc/ImageMagick', 'delegates.xml');
+
+    // load image to convert
+    convert.addUrl('demo/test.png', '/', 'test.png');
+
+    convert.allDone().then(function() {
+      convert.run('-rotate', '90', '/test.png', '/test-rotated-90.jpg').then(function() {
+        convert.getFile('/', 'test-rotated-90.jpg').then(function(contents) {
+
+          var img = document.createElement("img");
+          img.src = "data:image/jpeg;base64,"+window.btoa(contents);
+
+          var body = document.getElementsByTagName("body")[0];
+          body.appendChild(img);
+        });
+      });
+    });
+  });
+&lt;/script&gt;
+</code></pre>
       </section>
     </div>
 
