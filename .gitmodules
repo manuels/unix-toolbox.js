@@ -10,3 +10,6 @@
 [submodule "xz"]
 	path = modules/xz
 	url = git@github.com:manuels/unix-toolbox.js-xz.git
+[submodule "exact-image"]
+	path = modules/exact-image
+	url = git@github.com:manuels/unix-toolbox.js-exact-image.git
