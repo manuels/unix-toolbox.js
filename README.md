@@ -3,7 +3,9 @@ The unix-toolbox.js is a port of many popular Unix command line tools to Javascr
 It runs completely on the client-side and requires WebWorker support in the client's browser.
 
 ### Currently Supported Commands
-* ImageMagick
+* [GnuPG](https://github.com/manuels/unix-toolbox.js-gnupg)
+  * `gpg` OpenPGP encryption and signing tool
+* [ImageMagick](https://github.com/manuels/unix-toolbox.js-imagemagick)
   * `composite` overlaps one image over another.
   * `conjure` interprets and executes scripts written in the Magick Scripting Language (MSL).
   * `convert` convert between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more.
@@ -13,7 +15,7 @@ It runs completely on the client-side and requires WebWorker support in the clie
   * `montage` create  a  composite image by combining several separate images. The images are tiled on the composite image optionally adorned with a border, frame,
        image name, and more.
   * `stream` a lightweight tool to stream one or more pixel components of the image or portion of the image to your choice of storage formats.
-* Poppler
+* [Poppler](https://github.com/manuels/unix-toolbox.js-poppler)
   * `pdfdetach` Portable Document Format (PDF) document embedded file extractor
   * `pdffonts` Portable Document Format (PDF) font analyzer
   * `pdfimages` Portable Document Format (PDF) image extractor
@@ -23,9 +25,9 @@ It runs completely on the client-side and requires WebWorker support in the clie
   * `pdftoppm` Portable Document Format (PDF) to Portable Pixmap (PPM) converter
   * `pdftops` Portable Document Format (PDF) to PostScript converter
   * `pdftotext` Portable Document Format (PDF) to text converter
-* File
+* [File](https://github.com/manuels/unix-toolbox.js-file)
   * `file` determine file type
-* XZ Utils
+* [XZ Utils](https://github.com/manuels/unix-toolbox.js-xz)
   * `xz` Compress or decompress .xz files
   * `xzdec` Small .xz decompressor
 

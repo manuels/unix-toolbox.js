@@ -13,3 +13,6 @@
 [submodule "exact-image"]
 	path = modules/exact-image
 	url = git@github.com:manuels/unix-toolbox.js-exact-image.git
+[submodule "modules/gnupg"]
+	path = modules/gnupg
+	url = git://github.com/manuels/unix-toolbox.js-gnupg.git
